@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Games Platform</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <h1>🎮 Welcome to FunStation</h1>
+  <div class="nav-buttons">
+    <button onclick="showGame('rps')">Rock Paper Scissors</button>
+    <button onclick="showGame('memory')">Memory Game</button>
+    <button onclick="showGame('dice')">Dice Roll</button>
+  </div>
+
+  <!-- ROCK PAPER SCISSORS -->
+  <section id="rps" class="game-section" style="display: none;">
+    <h2>Rock Paper Scissors</h2>
+    <div id="rps-setup">
+      <label>Number of Rounds:</label>
+      <input type="number" id="rps-rounds" value="5" min="1">
+      <button onclick="startRPSGame()">Start Game</button>
+    </div>
+    <div id="rps-game" style="display:none;">
+      <div id="rps-choices" class="rps-choices"></div>
+      <p id="rps-reason"></p>
+      <p id="rps-result"></p>
+      <p id="rps-score"></p>
+      <div class="rps-buttons">
+        <button onclick="rpsPlay('rock')">🪨 Rock</button>
+        <button onclick="rpsPlay('paper')">📄 Paper</button>
+        <button onclick="rpsPlay('scissors')">✂ Scissors</button>
+      </div>
+      <div class="rps-progress-bar"><div id="rps-progress-fill"></div></div>
+      <p id="rps-final"></p>
+      <button id="rps-play-again" onclick="startRPSGame()" style="display:none;">🔁 Play Again</button>
+      <button onclick="resetRPSGame()">⬅ Back</button>
+    </div>
+  </section>
+
+  <!-- MEMORY GAME -->
+  <section id="memory" class="game-section" style="display:none;">
+    <h2>Memory Match</h2>
+    <input type="number" id="memory-count" value="8" min="4" max="18">
+    <button onclick="startMemoryGame()">Start Memory Game</button>
+    <div id="memory-board" class="memory-board"></div>
+    <p id="memory-status"></p>
+  </section>
+
+  <!-- DICE GAME -->
+  <section id="dice" class="game-section" style="display:none;">
+    <h2>Dice Roll Challenge</h2>
+    <input type="number" id="dice-rounds" value="5" min="1">
+    <button onclick="startDiceGame()">Start Dice Game</button>
+    <div class="dice-area">
+      <div id="user-dice" class="dice"></div>
+      <div id="computer-dice" class="dice"></div>
+    </div>
+    <button onclick="rollDice()">🎲 Roll Dice</button>
+    <p id="dice-result"></p>
+    <p id="dice-score"></p>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
